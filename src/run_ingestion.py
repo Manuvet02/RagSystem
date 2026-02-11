@@ -3,10 +3,12 @@ import os
 import uuid
 from pathlib import Path
 
-from Ingestion import load_document , clean_text , chunk_text
+from src.Ingestion.loader import load_document
+from src.Ingestion.cleaner import clean_text
+from src.Ingestion.chunker import chunk_text
 
-RAW_DATA_DIR = Path("data/raw")
-PROCESSED_DATA_DIR = Path("data/processed")
+RAW_DATA_DIR = Path("data/Raw")
+PROCESSED_DATA_DIR = Path("data/Processed")
 
 def ingest_document() -> None:
     """Ingest documents from RAW_DATA_DIR and save processed JSON chunks"""

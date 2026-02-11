@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
 from src.API.schemas import QueryRequest,QueryResponse
-from src.Rag import Generator
+from src.Rag.generator import Generator
 
 router = APIRouter(prefix="/rag",tags=["RAG"])
 generator = Generator()

@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import faiss
 import numpy as np
 from typing import List, Tuple
@@ -14,7 +16,7 @@ class VectorStore:
         distances, indices = self.index.search(query_embedding, top_k)
         return indices[0].tolist(), distances[0].tolist()
 
-    def save(self, path: str):
+    def save(self, path: Path):
         faiss.write_index(self.index, path)
 
     def load(self, path: str):
