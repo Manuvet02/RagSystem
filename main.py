@@ -18,7 +18,7 @@ def run_ingestion():
 
 
 def run_query(query: str):
-    print("Running RAG query...")
+    print("Running RAG...")
     generator = Generator()
 
     answer = generator.generate_answer(query)

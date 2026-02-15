@@ -2,6 +2,7 @@ from typing import List, Dict
 from pathlib import Path
 import json
 from src.Rag.retriever import Retriever
+import os
 import ollama
 
 # Percorso ai documenti processed
@@ -56,8 +57,10 @@ class Generator:
             QUESTION:
             {query}
             """
+        base_url = os.getenv("OLLAMA_BASE_URL","http://localhost:11434")
+        client = ollama.Client(host=base_url)
 
-        response = ollama.chat(model=self.model_name, messages=[{"role": "user", "content": prompt}])
+        response = client.chat(model=self.model_name, messages=[{"role": "user", "content": prompt}])
         return {
             "answer": response["message"]["content"],
             "sources": list(set(sources))

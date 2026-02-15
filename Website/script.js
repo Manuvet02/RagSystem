@@ -18,8 +18,8 @@ submitBtn.addEventListener("click", async () => {
     if (!res.ok) throw new Error(`HTTP error ${res.status}`);
 
     const data = await res.json();
-    let text = `Answer:\n${data.answer}\n\nContext chunks:\n`;
-    data.context.forEach((c, i) => { text += `[${i+1}] ${c}\n`; });
+    let text = `Answer:\n${data["answer"]}\n\nContext chunks:\n`;
+    data["sources"].forEach((c, i) => { text += `[${i+1}] ${c}\n`; });
 
     responseDiv.innerText = text;
   } catch (err) {

@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pkl
+
+# Virtualenv
+.venv/
+env/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Byte-compiled / cache
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Data / logs
+Data/
+*.log
+*.sqlite3
+*.db
+
+# FAISS / embeddings
+src/embeddings/*.index
+src/embeddings/*.pkl
+
+# FastAPI / Uvicorn
+*.pid
+*.sock
+
+# Docker
+*.tar
+docker-compose.override.yml
+**/.DS_Store
+
+# Python packages
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# PyCharm
+.idea/
+*.iml
