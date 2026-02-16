@@ -14,6 +14,7 @@ EMBEDDINGS_PATH = Path("data/Embeddings/faiss.index")
 def run_ingestion():
     print("Starting ingestion pipeline...")
     run_pipeline()
+    print("Ingestion pipeline finished.")
 
 
 

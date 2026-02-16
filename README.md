@@ -1,4 +1,4 @@
-# RagSystem – Document Intelligence con RAG
+# RagSystem <br> Document Intelligence con RAG
 
 **RagSystem** è un sistema di **document intelligence** basato su **RAG (Retrieval-Augmented Generation)** che permette di interrogare i tuoi documenti (PDF, DOCX, TXT) con un modello LLM tramite **FastAPI**.
 
@@ -10,19 +10,24 @@
 - Suddivisione in chunk e creazione di embeddings con **SentenceTransformers**
 - Indicizzazione semantica tramite **FAISS**
 - Recupero intelligente dei documenti più rilevanti
-- Risposte generate dal modello LLM (Ollama)
+- Risposte generate dal modello LLM Mistral (Ollama <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/ollama-dark.png" width=15>)
 - API REST per interazioni e chat con il modello
 
 ---
 
 ## Esecuzione
-
 ### Locale
 ```bash
+# Creazione ambiente virtuale
+python -m venv .venv
+
+# Attivazione
+.venv\Scripts\activate
+
 # Installazione dipendenze
 pip install -r requirements.txt
 
-#Avvio ingestion (prima volta)
+#Avvio ingestion (prima volta per ingestione dei documenti)
 python .\main.py ingest  
 
 #Richiesta della query
@@ -35,4 +40,8 @@ python .\main.py serve
 ```bash
 docker compose build
 docker compose up 
+```
+### Documentazione API (FastAPI)
+```
+http://localhost:8000/docs
 ```

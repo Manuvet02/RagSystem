@@ -31,7 +31,7 @@ def build_index():
 
     vector_store = VectorStore(dimension=embeddings.shape[1])
     vector_store.add_embeddings(embeddings)
-    vector_store.save(str(INDEX_PATH))
+    vector_store.save(INDEX_PATH)
 
     metadata_path = EMBEDDINGS_DIR / "metadata.json"
     metadata_path.write_text(

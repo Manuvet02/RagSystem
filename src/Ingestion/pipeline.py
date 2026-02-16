@@ -11,5 +11,5 @@ def run_pipeline():
     # Step 1: load, clean, chunk, embed
     ingest_document()
 
-    # Step 2: build e salva FAISS index
+    # Step 2: build and save FAISS index
     build_index()
